@@ -1,6 +1,8 @@
+import { MARGIN_TOP } from '@src/theme/constants';
 import styled from 'styled-components';
 
 export const FiltersWrapper = styled.div`
+  margin-top: ${MARGIN_TOP};
   width: 100%;
   display: flex;
   justify-content: space-around;

@@ -1,4 +1,3 @@
-import { MARGIN_TOP } from '@src/theme/constants';
 import { Heading1 } from '@src/theme/pagesElements';
 import styled from 'styled-components';
 
@@ -8,7 +7,6 @@ export const MainPageWrapper = styled.div`
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  margin-top: ${MARGIN_TOP};
 `;
 
 export const Empty = styled(Heading1)`
