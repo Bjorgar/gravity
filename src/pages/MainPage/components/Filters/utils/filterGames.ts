@@ -7,8 +7,8 @@ export function filterGame({
   filterData,
 }: FilterGamesArgs): TransformedGameData[] {
   return gamesList.filter(({ title, provider }) => (
-    title.toLocaleLowerCase()
-      .includes(filterData.searchValue.toLocaleLowerCase())
+    title.toLowerCase()
+      .includes(filterData.searchValue.toLowerCase())
       && provider.includes(filterData.provider)
   ));
 }

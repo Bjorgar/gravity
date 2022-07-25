@@ -9,9 +9,7 @@ export function useFetch<Res>(url: string) {
     setLoading(true);
 
     try {
-      const res = await fetch(url, {
-        method: 'GET',
-      });
+      const res = await fetch(url);
 
       if (!res.ok) {
         throw new Error(`${res.status}`);
@@ -24,7 +22,7 @@ export function useFetch<Res>(url: string) {
     } finally {
       setLoading(false);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

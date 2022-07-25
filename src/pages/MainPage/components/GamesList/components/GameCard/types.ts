@@ -1,4 +1,4 @@
-import { TransformedGameData } from '../../../../types';
+import { TransformedGameData } from '@src/pages/MainPage/types';
 
 export interface GameCardProps {
   game: TransformedGameData

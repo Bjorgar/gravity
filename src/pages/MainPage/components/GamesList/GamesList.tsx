@@ -3,7 +3,7 @@ import { GamesListProps } from './types';
 
 import { GamesCardsWrapper } from './styled';
 
-export default function GamesList({ gamesList }: GamesListProps) {
+export default function GamesList({ gamesList }: GamesListProps): JSX.Element {
   return (
     <GamesCardsWrapper>
       {

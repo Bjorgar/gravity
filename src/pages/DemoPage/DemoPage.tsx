@@ -12,7 +12,7 @@ import {
   ProviderInfo,
 } from './styled';
 
-export default function DemoPage() {
+export default function DemoPage(): JSX.Element {
   const params = useParams();
   const { id, provider, name } = params;
   const { state: title } = useLocation();

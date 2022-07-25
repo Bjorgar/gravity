@@ -2,7 +2,7 @@ import { ErrorPageProps } from './types';
 
 import { ErrorMessage, ErrorPageWrapper, Status } from './styled';
 
-export default function ErrorPage({ status }: ErrorPageProps) {
+export default function ErrorPage({ status }: ErrorPageProps): JSX.Element {
   return (
     <ErrorPageWrapper>
       <ErrorMessage>

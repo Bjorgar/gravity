@@ -1,7 +1,22 @@
 import Down from '@src/assets/down.svg';
-import styled from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 
 import { IsActiveValue } from './types';
+
+const applySelectorBody = ({
+  isActive,
+}: IsActiveValue): FlattenSimpleInterpolation => (
+  isActive
+    ? css`
+      opacity: 1;
+      transform: translateY(0px);
+    `
+    : css`
+      opacity: 0;
+      transform: translateY(-7px);
+      pointer-events: none;
+    `
+);
 
 export const SelectorWrapper = styled.div`
   position: relative;
@@ -40,7 +55,6 @@ export const SelectorButton = styled.button`
 `;
 
 export const SelectorBody = styled.ul<IsActiveValue>`
-  display: ${({ isActive }): string => isActive ? 'block' : 'none'};
   width: 100%;
   height: 500px;
   z-index: 100;
@@ -51,6 +65,10 @@ export const SelectorBody = styled.ul<IsActiveValue>`
   overflow-y: auto;
   border-radius: ${({ theme }): string => theme.shape.borderRadius.xl};
   list-style-type: none;
+  transition-duration: ${({ theme }): string => (
+    theme.transitionDuration.normal
+  )};
+  ${applySelectorBody}
 `;
 
 export const Option = styled.li`
