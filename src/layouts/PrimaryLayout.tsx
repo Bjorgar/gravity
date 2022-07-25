@@ -23,7 +23,9 @@ export default function PrimaryLayout() {
       <GlobalStyle />
       {
         errorInfo ? (
-          <ErrorPage status={errorInfo} />
+          <Suspense>
+            <ErrorPage status={errorInfo} />
+          </Suspense>
         ) : (
           <Wrapper>
             <Suspense>
