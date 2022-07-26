@@ -13,8 +13,7 @@ import {
 } from './styled';
 
 export default function DemoPage(): JSX.Element {
-  const params = useParams();
-  const { id, provider, name } = params;
+  const { id, provider, name } = useParams();
   const { state: title } = useLocation();
 
   const src = `http://test-proxy-server-lup-env.eba-2ipxdf96.ap-southeast-2.elasticbeanstalk.com/games/infin/${name}/${id}`;

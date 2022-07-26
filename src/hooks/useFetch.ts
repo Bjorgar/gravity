@@ -1,11 +1,11 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function useFetch<Res>(url: string) {
   const [isLoading, setLoading] = useState(false);
   const [resData, setResData] = useState<Res>();
   const [errorInfo, setErrorInfo] = useState<string>();
 
-  const request = useCallback(async () => {
+  const request = async () => {
     setLoading(true);
 
     try {
@@ -22,12 +22,12 @@ export function useFetch<Res>(url: string) {
     } finally {
       setLoading(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  };
 
   useEffect(() => {
     request();
-  }, [request]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return {
     errorInfo,

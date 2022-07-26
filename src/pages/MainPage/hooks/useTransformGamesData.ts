@@ -14,18 +14,12 @@ export function useTransformGamesData(): ReturnedUseTransformGamesData {
 
   function transformGameData(list: GamesRes): void {
     const transformedData = Object.entries(list)
-      .reduce<TransformedGameData[]>((acc, [gameId, gameData]) => {
-        const data: TransformedGameData = {
-          id: gameId,
-          title: gameData.title,
-          provider: gameData.provider,
-          demo: gameData.demo,
-        };
-
-        acc.push(data);
-
-        return acc;
-      }, []);
+      .reduce<TransformedGameData[]>((acc, [gameId, gameData]) => [...acc, {
+        id: gameId,
+        title: gameData.title,
+        provider: gameData.provider,
+        demo: gameData.demo,
+      }], []);
 
     setTransformedGamesData(transformedData);
   }

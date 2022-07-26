@@ -1,7 +1,6 @@
 import {
   createContext,
   useContext,
-  useMemo,
 } from 'react';
 import { useFetch } from '@src/hooks/useFetch';
 import { GamesRes } from '@src/types/response';
@@ -16,13 +15,12 @@ export function GameContextProvider({
 }: GameContextProps): JSX.Element {
   const { isLoading, resData, errorInfo } = useFetch<GamesRes>(GAMES_URL);
 
-  const value: ValueData = useMemo(() => (
-    {
-      isLoading,
-      errorInfo,
-      gamesList: resData,
-    }
-  ), [isLoading, resData, errorInfo]);
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
+  const value: ValueData = {
+    isLoading,
+    errorInfo,
+    gamesList: resData,
+  };
 
   return (
     <GamesContext.Provider value={value}>

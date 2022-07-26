@@ -24,7 +24,7 @@ export function usePagination({
 
   useEffect(() => {
     createPaginationData();
-  }, [offSet, createPaginationData]);
+  }, [createPaginationData]);
 
   return {
     pageCount,
